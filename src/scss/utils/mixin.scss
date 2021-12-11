@@ -1,0 +1,8 @@
+@use '../globals' as *;
+
+@mixin area($row-start, $row-end, $col-start, $col-end, $theme: var(--violet),$text:white) {
+    grid-row: #{$row-start} / #{$row-end};
+    grid-column: #{$col-start} / #{$col-end};
+	background: $theme;
+	color:$text;
+}

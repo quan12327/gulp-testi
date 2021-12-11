@@ -1,0 +1,21 @@
+@use '../utils' as *;
+@use '../globals' as *;
+
+.profile__head{
+    display: flex;
+    align-items: center;
+    img{
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+    .profile__head__name{
+        margin-left: rem(18);
+        h2{
+            font-size: rem(15);
+        }
+        
+        p{
+            font-size: rem(13);
+        }
+    }
+}

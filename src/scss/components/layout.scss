@@ -1,0 +1,103 @@
+@use '../utils' as *;
+@use '../globals' as *;
+
+
+$title--big: rem(25);
+$desc--big: rem(20);
+$item__padding:rem(20);
+
+
+.test__cointaner{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 2rem;
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+    @media screen and (max-width: 768px) {
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+}
+
+.test__item {
+    padding: rem(20);
+    border-radius: 3%;
+    padding: $item__padding;
+    &__title{
+        font-size: $title--big;
+    }
+    &__desc{
+        font-size: $desc--big;
+    }
+
+    &--violet{
+        grid-column: 1 / span 2;
+        @include area(1,1,1,span 2);
+        @media screen and (max-width: 1024px) {
+            @include area(auto,auto,1,3);
+        }
+        @media screen and (max-width: 768px) {
+            grid-column: auto;
+            grid-row: auto;
+        }
+    }
+    
+    &--grey{
+        @include area(1,1,3,3,var(--grey));
+        @media screen and (max-width: 1024px) {
+            @include area(auto,auto,1,2,var(--grey));
+        }
+        @media screen and (max-width: 768px) {
+            grid-column: auto;
+            grid-row: auto;
+        }
+    }
+    
+    &--blue{
+        @include area(2,2,2,span 2,var(--blue));
+        @media screen and (max-width: 1024px) {
+            @include area(auto,auto,1, 2,var(--blue));
+        }
+        @media screen and (max-width: 768px) {
+            grid-column: auto;
+            grid-row: auto;
+        }
+    }
+    
+    &--white{
+        @include area(2,2,1,1,var(--light-grey),black);
+        @media screen and (max-width: 1024px) {
+            @include area(auto,auto,2,3,var(--light-grey),black);
+        }
+        @media screen and (max-width: 768px) {
+            grid-column: auto;
+            grid-row: auto;
+        }
+    }
+    
+    &--white--long{
+        @include area(1,span 2,4,4,var(--light-grey),black);
+        @media screen and (max-width: 1024px) {
+            @media screen and (max-width: 1024px) {
+                @include area(auto,auto,2,3,var(--light-grey),black);
+            }
+            @media screen and (max-width: 768px) {
+                grid-column: auto;
+                grid-row: auto;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            grid-column: auto;
+            grid-row: auto;
+        }
+    }
+}
+
+
+
+.challenge{
+    text-align: center;
+}
